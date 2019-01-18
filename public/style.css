@@ -1,0 +1,78 @@
+.nav-link-custom{
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	color: white;
+}
+.navbar-nav-custom li{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.navbar-brand-custom{
+	color: white;
+}
+.nav-item:hover{
+	background-color: rgba(255,255,255,0.3);
+}
+.navbar-custom{
+	padding: 0;
+}
+.jumbotron{
+    background: none;
+}
+.jumbotron-custom{
+	background-image: url("http://makebeautifulebooks.digitalpubbing.com/wp-content/uploads/2013/08/03.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	color: white;
+}
+.jumbotron-head{
+	text-shadow: 1px 1px 2px white;
+	font-weight: 600;
+}
+.jumbotron-body{
+	text-shadow: 0.5px 0.5px 1px white;
+}
+#login, #register{
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+#login:hover, #register:hover{
+	background: none;
+}
+.calender{
+	background: url("https://jsbirdi0001.github.io/informa/images/calender.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.index-book{
+	background: url("https://jsbirdi0001.github.io/informa/images/showPageBackground.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 250px;
+}
+.index-container{
+	background: url("https://png.pngtree.com/thumb_back/fw800/back_pic/04/14/75/49582074207339b.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.link:hover{
+	text-decoration: none;
+	color: black;
+}
+.display-4-custom{
+	font-size: 3rem;
+}
+.hidden{
+	display: none;
+}
+.footer{
+	background : url("https://s3.envato.com/files/218429202/Preview_Image_.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: white;
+}
