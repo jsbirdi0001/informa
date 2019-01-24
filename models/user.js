@@ -1,7 +1,9 @@
 var mongoose = require("mongoose");
+var Book = require("./book")
 
 var userSchema = new mongoose.Schema({
-    name: String,
+    firstname: String,
+    lastname: String,
     email: String,
     phone: Number,
     books: [

@@ -4,7 +4,8 @@ var mongoose = require("mongoose"),
 
 var data = [
     {
-        name : "Jatinder Singh",
+        firstname: "Jatinder",
+        lastname : "Singh",
         email : "jsbirdi0001@gmail.com",
         phone : 4379259755
     }
@@ -32,8 +33,9 @@ function seedDB(){
                         //create a comment
                         Book.create(
                             {
-                                genre : "Science",
-                                book_name : "Science",
+                                price: 25,
+                                genre : "Business",
+                                book_name : "Believe and Achieve",
                                 edition : 2014,
                                 author : "Albert Edison"
                             }, function(err, comment){
