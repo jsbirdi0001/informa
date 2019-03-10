@@ -1,0 +1,55 @@
+<% include ./partials/header %>
+
+
+<div class="col-md-8 col-11 py-3 mt-3 bg-white border border-light" style="margin: 0 auto; border-radius: 20px;">
+    <h1 class="text-center border-bottom border-dark">
+        <%= user.books[0].book_name %> <br> <span class="lead"><em> <%= user.genre %> </em></span>
+    </h1>
+    
+    <div class="row">
+        <div class="col-md-6 border-right border-dark p-3 text-center">
+            <img src = "<%= user.books[0].url %>" alt="Book-Image" class="img-fluid" style="margin: 0 auto; height: 400px">
+        </div>
+        <div class="col-md-6 border-left border-dark">
+            <p>
+                <span class="lead text-primary">About Book:</span><br>
+                <span class="font-weight-bold">Price: $</span>
+                <%= user.books[0].price %><br>
+                <span class="font-weight-bold">Edition: </span>
+                <%= user.books[0].edition %><br>
+                <span class="font-weight-bold">Author: </span>
+                <%= user.books[0].author %><br><br>
+                
+                
+                <span class="lead text-primary">About Seller</span><br>
+                <span class="font-weight-bold">Username: </span>
+                <%= user.firstname %><br>
+                <span class="font-weight-bold">Name: </span>
+                <%= user.lastname %><br>
+                
+                <%= user.email %> |
+                <%= user.phone %>
+                
+                <div>
+                    <div class="lead text-primary">Contact Seller</div>
+                    <form method="POST" action="?" class="form-group">
+                        <input type="text" placeholder="Your Name.." name="name" class="my-2 form-control form-control-custom" required>
+                        <input type="email" placeholder="Your email.." name="email" class="my-2 form-control form-control-custom" required>
+                        <textarea placeholder="Enter your message" name="message" class="my-2 form-control form-control-custom" required></textarea>
+                        <input type="submit" value="SEND" class="btn btn-dark">
+                    </form>
+                </div>
+               
+            </p>
+        </div>
+        <div class="col-12 book-description p-3" >
+            <span class="lead text-primary">Book description: </span><br>
+            <%= user.books[0].description %><br>
+            
+        </div>
+        <button class="btn btn-dark" ><a href="/buy" class="link">Back</a></button>
+    </div>
+    
+</div>
+
+<% include ./partials/footer %>
