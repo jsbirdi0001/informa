@@ -10,19 +10,20 @@ var express = require("express"),
     Subscribe = require("./models/subscribe"),
     Feed = require("./models/feedback");
     
-const favicon = require('express-favicon');
- 
-app.use(favicon(__dirname + 'https://jsbirdi0001.github.io/informa/images/logo.png'));    
-    
-    
-    
+
 
 // mongoose.connect("mongodb://localhost/informa");
 
- 
-mongoose.connect("mongodb://jatinder96962:birdi6937@cluster0-shard-00-00-w6ltf.mongodb.net:27017,cluster0-shard-00-01-w6ltf.mongodb.net:27017,cluster0-shard-00-02-w6ltf.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true");
+// mongoose.connect("mongodb://jatinder96962:birdi6937@cluster0-shard-00-00-w6ltf.mongodb.net:27017,cluster0-shard-00-01-w6ltf.mongodb.net:27017,cluster0-shard-00-02-w6ltf.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true");
 
+// DB Config
+const db = require('./config/key').mongoURI;
 
+// Connect to MongoDB
+mongoose
+  .connect(db)
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
 
 
     
@@ -301,6 +302,10 @@ function isLoggedIn(req,res,next){
 
 
 
-app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("Informa app has been Started");
-})
+// app.listen(process.env.PORT, process.env.IP, function(){
+//     console.log("Informa app has been Started");
+// });
+
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.log(`Server running on port ${port}`));
