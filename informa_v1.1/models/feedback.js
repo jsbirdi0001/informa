@@ -1,14 +1,10 @@
 var mongoose = require("mongoose");
-var User = require("./user");
 
-var bookSchema = new mongoose.Schema({
-    price: Number,
-    book_name: String,
-    edition: Number,
-    description: String,
-    author: String,
-    url: String
+var feedSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    message: String
 })
-var Book = mongoose.model("Book",bookSchema);
+var Feed = mongoose.model("Feed",feedSchema);
 
-module.exports = Book;
+module.exports = Feed;

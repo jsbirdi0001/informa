@@ -8,16 +8,16 @@
 	    		</div>
 	    		<div class="col-lg-3 col-sm-6">
 	    			<h3 class="text-center" style="font-family:'Abril Fatface'">Feedback</h3>
-	    			<form action="?" method="POST" class="form-group">
-	    			    <input type="text" placeholder="Full Name..." required class="form-control my-2"> 
-	    			    <input type="email" placeholder="Email..." required class="form-control my-2 ">
-	    			    <textarea type="text" placeholder="Feedback...." required class="form-control my-2"></textarea>
+	    			<form action="/feedback" method="POST" class="form-group" onsubmit="myfunction()">
+	    			    <input type="text" name="name" placeholder="Full Name..." required class="form-control my-2"> 
+	    			    <input type="email" name="email" placeholder="Email..." required class="form-control my-2 ">
+	    			    <textarea type="text" name="msg" placeholder="Feedback...." required class="form-control my-2"></textarea>
 	    			    <input type="submit" class="btn btn-primary btn-block my-2" placeholder="Submit">
 	    			</form>
 	    		</div>
 	    		<div class="col-lg-6 px-sm-3 pt-sm-5 p-0 text-center">
 	    		    <h4 style=" font-weight: 200">DON'T FORGET FOR DAILY UPDATES</h4>
-	    			<form method="POST" action="/subscribe" class="form-group">
+	    			<form method="POST" action="/subscribe" class="form-group" onsubmit="sub()">
 	    			    <input class="form-control w-75 d-inline mt-1" name="email" type="text" placeholder="Enter your email here..." required>
 	    			    <input class="btn btn-danger px-3 my-2" type="submit" placeholder="SUBSCRIBE!!" value="SUBSCRIBE!!!">
 	    			</form>
@@ -39,5 +39,14 @@
 	    		</div>
 	    	</div>
 	    </div>
+	    
+	    <script>
+	    	function myfunction(){
+	    		alert("Thanks for Giving Feedback");
+	    	}
+	    	function sub(){
+	    		alert("You has been Subscribed to this Website")
+	    	}
+	    </script>
     </body>
 </html>

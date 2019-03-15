@@ -172,6 +172,32 @@ body{
 	border-left: 10px solid gray;
 }
 
+.jumbo-image{
+	animation-name: anim;
+	animation-iteration-count: infinite;
+	animation-duration: 2s;
+	transition: 0.4s;
+	animation-timing-function: ease-in-out;
+	position: relative;
+}
+
+.jumbo-image:hover{
+	transform: scale(1.1);
+}
+
+@keyframes anim{
+	0%{
+		top: 0;
+	}
+	50%{
+		top: 30px;
+	}
+	100%{
+		top: 0;
+	}
+}
+
+
 @media(max-width: 1080px){
 	.index-book{
 		height: 300px;

@@ -7,7 +7,8 @@ var express = require("express"),
     Book = require("./models/book"),
     seedDB = require("./seed"),
     validator = require("email-validator"),
-    Subscribe = require("./models/subscribe");
+    Subscribe = require("./models/subscribe"),
+    Feed = require("./models/feedback");
 
 mongoose.connect("mongodb://localhost/informa");
     
@@ -246,6 +247,26 @@ app.post("/subscribe", function(req,res){
         } else{
             console.log(created);
             res.redirect("/");
+        }
+    })
+});
+
+app.post("/feedback", function(req,res){
+    var name, email, msg;
+    name = req.body.name;
+    email = req.body.email;
+    msg = req.body.msg;
+    var obj = {
+        name: name,
+        email: email,
+        message: msg
+    };
+    Feed.create(obj, function(err, created){
+        if(err){
+            console.log(err);
+        } else{
+            res.redirect("/");
+            console.log(created);
         }
     })
 })
