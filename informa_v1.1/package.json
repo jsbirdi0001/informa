@@ -17,6 +17,7 @@
     "email-existence": "^0.1.6",
     "email-validator": "^2.0.4",
     "express": "^4.16.4",
+    "express-favicon": "^2.0.1",
     "express-session": "^1.15.6",
     "jsdom": "^13.2.0",
     "method-override": "^3.0.0",

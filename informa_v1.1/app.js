@@ -9,6 +9,13 @@ var express = require("express"),
     validator = require("email-validator"),
     Subscribe = require("./models/subscribe"),
     Feed = require("./models/feedback");
+    
+const favicon = require('express-favicon');
+ 
+app.use(favicon(__dirname + 'https://jsbirdi0001.github.io/informa/images/logo.png'));    
+    
+    
+    
 
 // mongoose.connect("mongodb://localhost/informa");
 
