@@ -20,10 +20,7 @@ var express = require("express"),
 const db = require('./config/key').mongoURI;
 
 // Connect to MongoDB
-mongoose
-  .connect(db, { useNewUrlParser: true })
-  .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err));
+mongoose.connect(db,{ useNewUrlParser: true }).then(() => console.log('MongoDB Connected')).catch(err => console.log(err));
 
 
     
@@ -302,10 +299,10 @@ function isLoggedIn(req,res,next){
 
 
 
-// app.listen(process.env.PORT, process.env.IP, function(){
-//     console.log("Informa app has been Started");
-// });
+app.listen(process.env.PORT, process.env.IP, function(){
+    console.log("Informa app has been Started");
+});
 
-const port = process.env.PORT || 5000;
+// const port = process.env.PORT || 5000;
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+// app.listen(port, () => console.log(`Server running on port ${port}`));
