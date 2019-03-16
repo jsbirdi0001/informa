@@ -13,14 +13,29 @@ var express = require("express"),
 
 
 // mongoose.connect("mongodb://localhost/informa");
-
-// mongoose.connect("mongodb://jatinder96962:birdi6937@cluster0-shard-00-00-w6ltf.mongodb.net:27017,cluster0-shard-00-01-w6ltf.mongodb.net:27017,cluster0-shard-00-02-w6ltf.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true");
+mongoose.connect("mongodb+srv://jatinder96962:birdi6937@cluster0-w6ltf.mongodb.net/test?retryWrites=true");
 
 // DB Config
-const db = require('./config/key').mongoURI;
+// const db = require('./config/key').mongoURI;
 
-// Connect to MongoDB
-mongoose.connect(db).then(() => console.log('MongoDB Connected')).catch(err => console.log(err));
+// // Connect to MongoDB
+// mongoose.connect(db);
+// .then(() => console.log('MongoDB Connected')).catch(err => console.log(err));
+
+
+// const MongoClient = require('mongodb').MongoClient;
+
+// // replace the uri string with your connection string.
+// const uri = "mongodb+srv://jatinder96962:birdi6937@cluster0-w6ltf.mongodb.net/test?retryWrites=true"
+// MongoClient.connect(uri, function(err, client) {
+//   if(err) {
+//         console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
+//   }
+//   console.log('Connected...');
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
 
 
     
@@ -298,10 +313,12 @@ function isLoggedIn(req,res,next){
 
 
 
-
-app.listen(27017, process.env.IP, function(){
-    console.log("Informa app has been Started");
-});
+app.listen(3000, function(){
+    console.log("Informa app Started");
+})
+// app.listen(process.env.PORT, process.env.IP, function(){
+//     console.log("Informa app has been Started");
+// });
 
 // const port = process.env.PORT || 5000;
 
