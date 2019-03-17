@@ -12,15 +12,14 @@ var express = require("express"),
     
 
 
-// mongoose.connect("mongodb://localhost/informa");
-mongoose.connect("mongodb+srv://jatinder96962:birdi6937@cluster0-w6ltf.mongodb.net/test?retryWrites=true");
+// mongoose.connect("mongodb://localhost/informa",({useNewUrlParser:true}));
+// mongoose.connect("mongodb+srv://jatinder96962:birdi6937@cluster0-w6ltf.mongodb.net/test?retryWrites=true", ({useNewUrlParser:true}));
 
 // DB Config
-// const db = require('./config/key').mongoURI;
+const db = require('./config/key').mongoURI;
 
 // // Connect to MongoDB
-// mongoose.connect(db);
-// .then(() => console.log('MongoDB Connected')).catch(err => console.log(err));
+mongoose.connect(db,{useNewUrlParser: true}).then(() => console.log('MongoDB Connected')).catch(err => console.log(err));
 
 
 // const MongoClient = require('mongodb').MongoClient;
@@ -218,6 +217,9 @@ app.get("/buyBook/:id",isLoggedIn, function(req, res) {
         }
     })
 })
+app.post("/underdevelopment",function(req, res) {
+    res.send("The page is Under Development <br> <a href='/'><button>Go Back</button></a>")
+})
 
 
 ////***********************
@@ -313,13 +315,13 @@ function isLoggedIn(req,res,next){
 
 
 
-app.listen(3000, function(){
-    console.log("Informa app Started");
-})
+// app.listen(3000, function(){
+//     console.log("Informa app Started");
+// })
 // app.listen(process.env.PORT, process.env.IP, function(){
 //     console.log("Informa app has been Started");
 // });
 
-// const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
-// app.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(port, () => console.log(`Server running on port ${port}`));
