@@ -15,18 +15,29 @@ var express = require("express"),
 // mongoose.connect("mongodb://localhost/informa",({useNewUrlParser:true}));
 // mongoose.connect("mongodb+srv://jatinder96962:birdi6937@cluster0-w6ltf.mongodb.net/test?retryWrites=true", ({useNewUrlParser:true}));
 
-// DB Config
-const db = require('./config/key').mongoURI;
+// // DB Config
+// const db = require('./config/key').mongoURI;
 
-// // Connect to MongoDB
-mongoose.connect(db,{useNewUrlParser: true}).then(() => console.log('MongoDB Connected')).catch(err => console.log(err));
+// // // Connect to MongoDB
+// mongoose.connect(db,{useNewUrlParser: true}).then(() => console.log('MongoDB Connected')).catch(err => console.log(err));
 
+const MongoClient = require("mongodb").MongoClient;
+const uri = "mongodb+srv://jatinder96962:birdi6937@cluster0-w6ltf.mongodb.net/test?retryWrites=true";
+
+mongoose.connect(uri, {useNewUrlParser: true});
+
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
 
 // const MongoClient = require('mongodb').MongoClient;
 
 // // replace the uri string with your connection string.
 // const uri = "mongodb+srv://jatinder96962:birdi6937@cluster0-w6ltf.mongodb.net/test?retryWrites=true"
-// MongoClient.connect(uri, function(err, client) {
+// MongoClient.connect(uri, { useNewUrlParser: true }, function(err, client) {
 //   if(err) {
 //         console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
 //   }
@@ -322,6 +333,6 @@ function isLoggedIn(req,res,next){
 //     console.log("Informa app has been Started");
 // });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
