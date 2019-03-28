@@ -1,0 +1,14 @@
+heroku login
+heroku create myapp
+heroku remote -v
+heroku remote remove heroku
+heroku git:remote -a myappnew // giving the heroku to git
+git add .
+git commit -m "JJ"
+git push heroku master
+git push -u origin master
+
+
+//If you rename your heroku app name in heroku.com then do this
+git remote rm heroku
+heroku git:remote -a newname
