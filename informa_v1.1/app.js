@@ -13,7 +13,7 @@ var express = require("express"),
 
 
 // mongoose.connect("mongodb://localhost/informa",({useNewUrlParser:true}));
-// mongoose.connect("mongodb+srv://jatinder96962:birdi6937@cluster0-w6ltf.mongodb.net/test?retryWrites=true", ({useNewUrlParser:true}));
+mongoose.connect("mongodb+srv://jatinder96962:birdi6937@cluster0-w6ltf.mongodb.net/test?retryWrites=true", {useNewUrlParser:true});
 
 // // DB Config
 // const db = require('./config/key').mongoURI;
@@ -21,10 +21,10 @@ var express = require("express"),
 // // // Connect to MongoDB
 // mongoose.connect(db,{useNewUrlParser: true}).then(() => console.log('MongoDB Connected')).catch(err => console.log(err));
 
-const MongoClient = require("mongodb").MongoClient;
-const uri = "mongodb+srv://jatinder96962:birdi6937@cluster0-w6ltf.mongodb.net/test?retryWrites=true";
+// const MongoClient = require("mongodb").MongoClient;
+// const uri = "mongodb+srv://jatinder96962:birdi6937@cluster0-w6ltf.mongodb.net/test?retryWrites=true";
 
-mongoose.connect(uri, {useNewUrlParser: true});
+// mongoose.connect(uri, {useNewUrlParser: true});
 
 // const client = new MongoClient(uri, { useNewUrlParser: true });
 // client.connect(err => {
@@ -329,10 +329,10 @@ function isLoggedIn(req,res,next){
 // app.listen(3000, function(){
 //     console.log("Informa app Started");
 // })
-// app.listen(process.env.PORT, process.env.IP, function(){
-//     console.log("Informa app has been Started");
-// });
+app.listen(process.env.PORT, process.env.IP, function(){
+    console.log("Informa app has been Started");
+});
 
-const port = process.env.PORT || 8080;
+// const port = process.env.PORT || 8080;
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+// app.listen(port, () => console.log(`Server running on port ${port}`));
